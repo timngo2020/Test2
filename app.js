@@ -18,12 +18,12 @@ rows as an argument, and then prints out Pascal's triangle up to the number of r
 //const oddNum = array => array.filter( x => x % 2 );
 const oddNum = array => {
     const a = []; //array to be returned
-    const rcur = arr => {
+    const rcur = arr => { // recusive function
         if (arr.length == 0) return;
-        if (arr[0] % 2 == 1) {
+        if (arr[0] % 2 == 1) { //odd number
             a.push(arr[0]);
         }
-        rcur(arr.slice(1));
+        rcur(arr.slice(1)); // remove one element and pass in the rest
     }
     rcur(array);
     return a;
